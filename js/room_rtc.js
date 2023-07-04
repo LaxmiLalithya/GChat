@@ -56,7 +56,7 @@ let joinRoomInit = async () => {
     client.on('user-published', handleuserpublished)
     client.on('user-left', handleuserleft)
 
-    /* joinStream() */
+    /* joinStream()  */
 }
 
 
@@ -69,10 +69,11 @@ let joinStream = async () => {
         width:{min:640, ideal:1920, max:1920},
         height:{min:480, ideal:1080, max:1080}
     }})
-    
+
+
     let player = `<div class="video__container" id="user-container-${uid}">
                     <div class="video-player" id="user-${uid}"></div>
-                </div>`
+                 </div>`
 
     document.getElementById('streams__container').insertAdjacentHTML('beforeend', player)
     document.getElementById(`user-container-${uid}`).addEventListener('click', expandVideoFrame)
@@ -80,7 +81,6 @@ let joinStream = async () => {
     localTracks[1].play(`user-${uid}`)
     await client.publish([localTracks[0], localTracks[1]])
 }
-
 
 let switchToCamera = async () => {
     let player = `<div class="video__container" id="user-container-${uid}">
@@ -131,7 +131,7 @@ let handleuserpublished = async (user, mediaType) => {
 
 let handleuserleft = async (user) => {
     delete remoteUsers[user.uid]
-     let item = document.getElementById(`user-container-${user.uid}`)
+    let item = document.getElementById(`user-container-${user.uid}`)
     if(item){
         item.remove()
     }
@@ -222,6 +222,7 @@ let toggleScreen = async (e) => {
         switchToCamera()
     }
 }
+
 
 let leaveStream = async (e) => {
     e.preventDefault()
