@@ -338,3 +338,19 @@
 .stream__actions button:hover {
   background-color: #1c56ac;
 }
+
+#join-btn{
+  background-color: #3a2495;
+  font-size: 18px;
+  padding: 25px 90px;
+  border: none;
+  color:#fff;
+
+  position: fixed;
+  bottom: 1rem;
+  border-radius: 8px;
+  left:50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+} 
+
